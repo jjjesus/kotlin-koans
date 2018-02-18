@@ -12,7 +12,20 @@ fun todoTask1(collection: Collection<Int>): Nothing = TODO(
     """,
     references = { JavaCode1().task1(collection) })
 
-
+// JJJ: Do a cut-paste of Java code and IntelliJ will pop-up a dialog
+// to convert Java to Kotlin
+//
 fun task1(collection: Collection<Int>): String {
-    todoTask1(collection)
+    val sb = StringBuilder()
+    sb.append("{")
+    val iterator = collection.iterator()
+    while (iterator.hasNext()) {
+        val element = iterator.next()
+        sb.append(element)
+        if (iterator.hasNext()) {
+            sb.append(", ")
+        }
+    }
+    sb.append("}")
+    return sb.toString()
 }

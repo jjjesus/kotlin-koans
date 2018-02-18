@@ -35,4 +35,7 @@ fun todoTask5(): Nothing = TODO(
     documentation = doc5(),
     references = { getPattern(); month })
 
-fun task5(): String = todoTask5()
+// JJJ: Function can be defined as simply a value that is returned
+//
+fun task5(): String = """\d{2}\. $month \.\d{4}"""
+
