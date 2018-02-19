@@ -14,8 +14,13 @@ fun whatFoldDoes(): Int {
 
 fun Shop.getSetOfProductsOrderedByEveryCustomer(): Set<Product> {
     // Return the set of products ordered by every customer
+    // JJJ: 'fold' is the same as 'reduce'
+    //      the orderedByAll is the accumulator/result
+    //      customer is the element in the list pointed by the iterator
+    //      the predicate yields a value (if any) that is added to the accumulator
+    //
     return customers.fold(allOrderedProducts, {
         orderedByAll, customer ->
-        todoCollectionTask()
+            orderedByAll.intersect(customer.orderedProducts)
     })
 }
