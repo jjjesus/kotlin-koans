@@ -15,7 +15,12 @@ data class MyDate(val year: Int, val month: Int, val dayOfMonth: Int): Comparabl
     }
 }
 
-operator fun MyDate.rangeTo(other: MyDate): DateRange = todoTask27()
+// JJJ: I think we assume that the 'other' MyDate is greater than 'this'
+//
+operator fun MyDate.rangeTo(other: MyDate): DateRange
+{
+    return DateRange(this, other)
+}
 
 // JJJ: This was provided
 //
