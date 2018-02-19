@@ -8,12 +8,8 @@ fun example1(list: List<Int>) {
     val squares = list.map { it * it }
 }
 
-fun Shop.getCitiesCustomersAreFrom(): Set<City> {
-    return this.customers.map() { it.city }.toSet()
-}
+fun Shop.getCitiesCustomersAreFrom() = this.customers.map() { it.city }.toSet()
 
-fun Shop.getCustomersFrom(city: City): List<Customer> {
-    return this.customers.filter { it.city == city }
-}
+fun Shop.getCustomersFrom(city: City) = this.customers.filter { it.city == city }
 
 
