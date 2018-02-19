@@ -16,13 +16,14 @@ data class MyDate(val year: Int, val month: Int, val dayOfMonth: Int): Comparabl
 }
 
 // JJJ: I think we assume that the 'other' MyDate is greater than 'this'
+//      Reverse them if the 'other' is greater
 //
-operator fun MyDate.rangeTo(other: MyDate): DateRange
-{
-    return DateRange(this, other)
+operator fun MyDate.rangeTo(other: MyDate): DateRange = when {
+        this < other -> DateRange(this, other)
+        else -> DateRange(other, this)
 }
 
-// JJJ: This was provided
+// JJJ: This enum was provided
 //
 enum class TimeInterval {
     DAY,
