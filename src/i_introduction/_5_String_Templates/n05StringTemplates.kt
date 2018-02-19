@@ -37,5 +37,4 @@ fun todoTask5(): Nothing = TODO(
 
 // JJJ: Function can be defined as simply a value that is returned
 //
-fun task5(): String = """\d{2}\. $month \.\d{4}"""
-
+fun task5(): String = """\d{2} $month \d{4}"""
