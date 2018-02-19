@@ -18,10 +18,15 @@ data class MyDate(val year: Int, val month: Int, val dayOfMonth: Int): Comparabl
 // JJJ: I think we assume that the 'other' MyDate is greater than 'this'
 //      Reverse them if the 'other' is greater
 //
-operator fun MyDate.rangeTo(other: MyDate): DateRange = when {
-        this < other -> DateRange(this, other)
-        else -> DateRange(other, this)
-}
+//operator fun MyDate.rangeTo(other: MyDate): DateRange = when {
+//        this < other -> DateRange(this, other)
+//        else -> DateRange(other, this)
+//}
+
+// JJJ: Koan 28 assumes that if other is less than this, then,
+//      the DateRange is considered 'empty'
+//
+operator fun MyDate.rangeTo(other: MyDate): DateRange = DateRange(this, other)
 
 // JJJ: This enum was provided
 //
